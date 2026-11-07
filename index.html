@@ -58,20 +58,37 @@
       line-height: 1.6;
     }
 
+    /* Premium Top Branding Bar */
     .top-strip {
-      background: #0b2545;
-      color: #94a3b8;
-      font-size: 0.8rem;
-      padding: 0.45rem 1.5rem;
-      text-align: right;
+      background: linear-gradient(90deg, #0a192f 0%, #1e3a8a 50%, #0a192f 100%);
+      color: #e2e8f0;
+      font-size: 0.88rem;
+      padding: 0.65rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid #38bdf8;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       letter-spacing: 0.5px;
     }
-    .top-strip strong { color: #38bdf8; font-weight: 600; }
+    .top-strip .host-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.25rem 0.85rem;
+      border-radius: 30px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    .top-strip strong {
+      color: #38bdf8;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+    }
 
+    /* Header */
     header {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: white;
-      padding: 3rem 1.5rem;
+      padding: 2.8rem 1.5rem;
       text-align: center;
     }
 
@@ -174,7 +191,7 @@
     .info-label { color: var(--text-muted); font-weight: 500; }
     .info-value { font-weight: 600; text-align: right; }
 
-    /* Gallery */
+    /* Photo Gallery */
     .filter-bar {
       display: flex;
       gap: 0.5rem;
@@ -318,16 +335,19 @@
       margin-top: 1rem;
       padding-top: 1rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.92rem;
-      color: #94a3b8;
+      font-size: 0.95rem;
+      color: #cbd5e1;
     }
     .branding-box strong { color: #38bdf8; font-weight: 600; }
   </style>
 </head>
 <body>
 
+  <!-- Highlighted Top Strip -->
   <div class="top-strip">
-    Designed and Hosted by <strong>Naresh Kumar Akhand</strong>
+    <div class="host-tag">
+      Designed and Hosted by <strong>Naresh Kumar Akhand</strong>
+    </div>
   </div>
 
   <header>
@@ -404,7 +424,6 @@
     <section class="card">
       <h2>जैतपुरा फोटो गैलरी (Photo Gallery)</h2>
 
-      <!-- Categories Filter with Samudayik Bhavan -->
       <div class="filter-bar">
         <button class="filter-btn active" onclick="filterGallery('all', this)">सभी (All)</button>
         <button class="filter-btn" onclick="filterGallery('samudayik', this)">सामुदायिक भवन</button>
@@ -417,18 +436,18 @@
 
       <div class="gallery-grid" id="galleryContainer">
 
-        <!-- Samudayik Bhavan Card -->
-        <div class="gallery-card" data-category="samudayik" onclick="openModal('samudayik bhavan.jpg', 'सामुदायिक भवन जैतपुरा')">
-          <img src="samudayik%20bhavan.jpg" alt="सामुदायिक भवन" onerror="this.src='samudayik bhavan.jpg'; this.onerror=null;">
+        <!-- Samudayik Bhavan (Auto-Fallback handles both bhavan.jpg and samudayik bhavan.jpg) -->
+        <div class="gallery-card" data-category="samudayik" onclick="openModal(document.getElementById('bhavanImg').src, 'सामुदायिक भवन जैतपुरा')">
+          <img id="bhavanImg" src="bhavan.jpg" alt="सामुदायिक भवन जैतपुरा" onerror="if(this.src.indexOf('samudayik') === -1){ this.src='samudayik%20bhavan.jpg'; }">
           <div class="gallery-meta">
-            <span class="gallery-cat">सार्वजनिक भवन</span>
+            <span class="gallery-cat">सार्वजनिक स्थल</span>
             <div class="gallery-title">सामुदायिक भवन जैतपुरा</div>
           </div>
         </div>
 
         <!-- Railway Station -->
         <div class="gallery-card" data-category="railway" onclick="openModal('railway.jpg', 'निकटतम रेलवे स्टेशन (RWJ)')">
-          <img src="railway.jpg" alt="रवांजना डूंगर रेलवे स्टेशन" onerror="this.src='https://placehold.co/600x400?text=Railway+Station'">
+          <img src="railway.jpg" alt="रवांजना डूंगर रेलवे स्टेशन">
           <div class="gallery-meta">
             <span class="gallery-cat">निकटतम रेलवे स्टेशन</span>
             <div class="gallery-title">रवांजना डूंगर (RWJ) स्टेशन</div>
@@ -437,7 +456,7 @@
 
         <!-- Temple -->
         <div class="gallery-card" data-category="temple" onclick="openModal('temple.jpg', 'मंदिर व धार्मिक स्थल')">
-          <img src="temple.jpg" alt="धार्मिक स्थल" onerror="this.src='https://placehold.co/600x400?text=Temple'">
+          <img src="temple.jpg" alt="धार्मिक स्थल">
           <div class="gallery-meta">
             <span class="gallery-cat">धार्मिक स्थल</span>
             <div class="gallery-title">मंदिर व धार्मिक स्थल</div>
@@ -446,7 +465,7 @@
 
         <!-- Village View -->
         <div class="gallery-card" data-category="village" onclick="openModal('village.jpg', 'गांव का दृश्य')">
-          <img src="village.jpg" alt="गांव का दृश्य" onerror="this.src='https://placehold.co/600x400?text=Village+View'">
+          <img src="village.jpg" alt="गांव का दृश्य">
           <div class="gallery-meta">
             <span class="gallery-cat">गांव का दृश्य</span>
             <div class="gallery-title">ग्राम जैतपुरा का दृश्य</div>
@@ -455,7 +474,7 @@
 
         <!-- School -->
         <div class="gallery-card" data-category="school" onclick="openModal('school.jpg', 'शिक्षा एवं विद्यालय')">
-          <img src="school.jpg" alt="विद्यालय" onerror="this.src='https://placehold.co/600x400?text=School'">
+          <img src="school.jpg" alt="विद्यालय">
           <div class="gallery-meta">
             <span class="gallery-cat">शिक्षा</span>
             <div class="gallery-title">शिक्षा एवं विद्यालय</div>
@@ -464,7 +483,7 @@
 
         <!-- Agriculture -->
         <div class="gallery-card" data-category="agriculture" onclick="openModal('farm.jpg', 'खेत व प्रकृति')">
-          <img src="farm.jpg" alt="खेत व प्रकृति" onerror="this.src='https://placehold.co/600x400?text=Agriculture'">
+          <img src="farm.jpg" alt="खेत व प्रकृति">
           <div class="gallery-meta">
             <span class="gallery-cat">खेत व प्रकृति</span>
             <div class="gallery-title">खेत व प्राकृतिक वातावरण</div>
@@ -474,7 +493,7 @@
       </div>
     </section>
 
-    <!-- Map -->
+    <!-- Google Map Embed -->
     <section class="card">
       <h2>गूगल मैप्स लोकेशन (Google Map)</h2>
       <div class="map-wrapper">
