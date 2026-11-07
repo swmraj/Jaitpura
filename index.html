@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Jaitpura Village Portal | Sawai Madhopur, Rajasthan</title>
+  <meta name="description" content="Official community portal for Jaitpura village in Sawai Madhopur district, Rajasthan. Census 2011 demographics, geography, Rawanjna Doongar Gram Panchayat details, nearby railway station RWJ, and interactive photo gallery.">
+  <meta name="keywords" content="Jaitpura, Jaitpura village, Jaitpura Sawai Madhopur, Rawanjna Doongar, RWJ, 322001, Khandar, Chauth Ka Barwara, Naresh Kumar Akhand">
+  <meta name="author" content="Naresh Kumar Akhand">
+  <meta name="robots" content="index, follow">
+
+  <!-- Schema.org for Google Search Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AdministrativeArea",
+    "name": "Jaitpura",
+    "alternateName": "जैतपुरा",
+    "description": "Jaitpura is a village in Sawai Madhopur tehsil, Sawai Madhopur district, Rajasthan, India.",
+    "identifier": "77706",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sawai Madhopur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "322001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 26.0610,
+      "longitude": 76.3570
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1565c0;
+      --primary-dark: #0d47a1;
+      --accent: #f57c00;
+      --accent-dark: #e65100;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Top Branding Strip */
+    .top-strip {
+      background: #0b2545;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      padding: 0.4rem 1.5rem;
+      text-align: right;
+      letter-spacing: 0.5px;
+    }
+    .top-strip strong {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      opacity: 0.95;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 1.4rem;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Key Statistics */
+    .stat-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat-box {
+      background: #eff6ff;
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+      border: 1px solid #dbeafe;
+    }
+
+    .stat-box .num {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .stat-box .label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      font-weight: 500;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .info-value {
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* Table Styles */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    table th, table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table th {
+      background-color: #f8fafc;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Maps Embed */
+    .map-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 380px;
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Secret / Admin Photo Tool */
+    #adminUploadCard {
+      background: #fdfbf7;
+      border: 2px dashed #f59e0b;
+      display: none; /* Default Hidden for Test / Public */
+      margin-bottom: 1.5rem;
+    }
+
+    .upload-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .upload-form .full-width {
+      grid-column: span 2;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .form-group input, 
+    .form-group select {
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      background: white;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Gallery Grid */
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .filter-btn {
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: white;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .gallery-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-meta {
+      padding: 0.8rem;
+    }
+
+    .gallery-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .gallery-cat {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(239, 68, 68, 0.85);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: none; /* Visible only when admin mode is toggled */
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* Modal / Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 800px;
+      width: 100%;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .modal-info {
+      padding: 1rem 1.4rem;
+    }
+
+    .close-modal {
+      float: right;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .branding-box {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.92rem;
+      color: #94a3b8;
+    }
+
+    .branding-box strong {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    @media (max-width: 650px) {
+      .upload-form { grid-template-columns: 1fr; }
+      .upload-form .full-width { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    Designed and Hosted by <strong>Naresh Kumar Akhand</strong>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>Jaitpura Village Portal</h1>
+    <p>ग्राम जैतपुरा | तहसील व जिला: सवाई माधोपुर (राजस्थान)</p>
+    <div class="badge-bar">
+      <span class="badge">LGD Code: 77706</span>
+      <span class="badge">पिन कोड: 322001</span>
+      <span class="badge">ग्राम पंचायत: रवांजना डूंगर</span>
+      <span class="badge">रेलवे स्टेशन: RWJ (~2.2 km)</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- About Section -->
+    <section class="card">
+      <h2>गांव का संक्षिप्त परिचय</h2>
+      <p>
+        जैतपुरा राजस्थान के सवाई माधोपुर जिले की सवाई माधोपुर तहसील में स्थित एक शांत व सुव्यवस्थित गांव है। यह जिला मुख्यालय से मात्र 18 किमी की दूरी पर स्थित है। प्रशासनिक रूप से यह <strong>रवांजना डूंगर ग्राम पंचायत</strong> और <strong>चौथ का बरवाड़ा ब्लॉक</strong> के अंतर्गत आता है। राजनीतिक प्रतिनिधित्व के तहत यह <strong>खंडार विधानसभा क्षेत्र</strong> तथा <strong>टोंक-सवाई माधोपुर लोकसभा क्षेत्र</strong> में स्थित है।
+      </p>
+    </section>
+
+    <!-- Key Stats -->
+    <div class="stat-cards">
+      <div class="stat-box">
+        <div class="num">740</div>
+        <div class="label">कुल जनसंख्या (2011)</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">142</div>
+        <div class="label">कुल परिवार</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">62.46%</div>
+        <div class="label">साक्षरता दर</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">855</div>
+        <div class="label">लिंगानुपात</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">312</div>
+        <div class="label">क्षेत्रफल (हेक्टेयर)</div>
+      </div>
+    </div>
+
+    <!-- Administrative & Connectivity Details -->
+    <div class="grid-2">
+      <section class="card">
+        <h2>प्रशासनिक विवरण (Administration)</h2>
+        <ul class="info-list">
+          <li><span class="info-label">गांव का नाम</span><span class="info-value">जैतपुरा (Jaitpura)</span></li>
+          <li><span class="info-label">ग्राम पंचायत</span><span class="info-value">रवांजना डूंगर</span></li>
+          <li><span class="info-label">पंचायत समिति / ब्लॉक</span><span class="info-value">चौथ का बरवाड़ा</span></li>
+          <li><span class="info-label">तहसील</span><span class="info-value">सवाई माधोपुर</span></li>
+          <li><span class="info-label">जिला</span><span class="info-value">सवाई माधोपुर</span></li>
+          <li><span class="info-label">विधानसभा क्षेत्र</span><span class="info-value">खंडार (SC)</span></li>
+          <li><span class="info-label">लोकसभा क्षेत्र</span><span class="info-value">टोंक-सवाई माधोपुर</span></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>कनेक्टिविटी व भूगोल (Connectivity)</h2>
+        <ul class="info-list">
+          <li><span class="info-label">LGD विलेज कोड</span><span class="info-value">77706</span></li>
+          <li><span class="info-label">पिन कोड</span><span class="info-value">322001</span></li>
+          <li><span class="info-label">निकटतम रेलवे स्टेशन</span><span class="info-value">रवांजना डूंगर (RWJ - 2.2 km)</span></li>
+          <li><span class="info-label">मुख्य जंक्शन</span><span class="info-value">सवाई माधोपुर जंक्शन (18 km)</span></li>
+          <li><span class="info-label">निकटतम हवाई अड्डा</span><span class="info-value">कोटा एयरपोर्ट</span></li>
+          <li><span class="info-label">भौगोलिक क्षेत्र</span><span class="info-value">312 हेक्टेयर (3.12 km²)</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Secret Admin Upload Card (Hidden by default for visitors/testing) -->
+    <section class="card" id="adminUploadCard">
+      <h2 style="color: #b45309; border-color: #b45309;">
+        🛠️ व्यवस्थापक फोटो अपलोड टूल (Admin Tool)
+        <button class="btn" onclick="toggleAdminTool(false)" style="background:#fde68a; color:#78350f; font-size:0.75rem;">छुपाएं (Hide)</button>
+      </h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">
+        यह टूल केवल आपके लिए है। सामान्य टेस्टिंग या विजिटर के समय यह अपने आप छुपा रहता है।
+      </p>
+
+      <div class="upload-form">
+        <div class="form-group">
+          <label>फोटो चुनें (Select Photo):</label>
+          <input type="file" id="photoInput" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label>श्रेणी (Category):</label>
+          <select id="photoCategory">
+            <option value="railway">निकटतम रेलवे स्टेशन (Nearby Railway Station)</option>
+            <option value="temple">धार्मिक स्थल / मंदिर (Temple)</option>
+            <option value="village">गांव का दृश्य (Village View)</option>
+            <option value="school">विद्यालय / शिक्षा (School)</option>
+            <option value="agriculture">खेत एवं प्रकृति (Agriculture)</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>फोटो का शीर्षक (Title/Caption):</label>
+          <input type="text" id="photoTitle" placeholder="उदा. रवांजना डूंगर रेलवे स्टेशन (RWJ) या गांव का प्रवेश द्वार">
+        </div>
+        <div class="full-width">
+          <button class="btn btn-primary" onclick="handleUpload()">फोटो अपलोड करें और सेव करें</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="card">
+      <h2>
+        जैतपुरा फोटो गैलरी (Photo Gallery)
+      </h2>
+
+      <!-- Categories Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">सभी (All)</button>
+        <button class="filter-btn" onclick="filterGallery('railway', this)">निकटतम रेलवे स्टेशन (RWJ)</button>
+        <button class="filter-btn" onclick="filterGallery('temple', this)">मंदिर व धार्मिक स्थल</button>
+        <button class="filter-btn" onclick="filterGallery('village', this)">गांव का दृश्य</button>
+        <button class="filter-btn" onclick="filterGallery('school', this)">शिक्षा</button>
+        <button class="filter-btn" onclick="filterGallery('agriculture', this)">खेत व प्रकृति</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryContainer"></div>
+    </section>
+
+    <!-- Google Map Embed -->
+    <section class="card">
+      <h2>गूगल मैप्स लोकेशन (Google Map)</h2>
+      <div class="map-wrapper">
+        <iframe 
+          title="Jaitpura Location Map"
+          src="https://maps.google.com/maps?q=Jaitpura,Sawai+Madhopur,Rajasthan,322001&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Census Table -->
+    <section class="card">
+      <h2>जनगणना 2011 आंकड़े (Census Data)</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>श्रेणी (Category)</th>
+              <th>कुल (Total)</th>
+              <th>पुरुष (Male)</th>
+              <th>महिला (Female)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>कुल जनसंख्या</td><td>740</td><td>399</td><td>341</td></tr>
+            <tr><td>बाल जनसंख्या (0–6 वर्ष)</td><td>122</td><td>60</td><td>62</td></tr>
+            <tr><td>अनुसूचित जाति (SC)</td><td>740</td><td>399</td><td>341</td></tr>
+            <tr><td>अनुसूचित जनजाति (ST)</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>साक्षर जनसंख्या</td><td>386</td><td>287 (84.66%)</td><td>99 (35.48%)</td></tr>
+            <tr><td>निरक्षर जनसंख्या</td><td>354</td><td>112</td><td>242</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Nearby Villages Table -->
+    <section class="card">
+      <h2>आस-पास के गांव (Nearby Villages)</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>गांव</th>
+              <th>दूरी</th>
+              <th>दिशा</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>श्योपुरा (Shyopura)</td><td>1.57 km</td><td>उत्तर-पूर्व (North-East)</td></tr>
+            <tr><td>श्योपुरा 2 (Shyopura 2)</td><td>2.15 km</td><td>पूर्व (East)</td></tr>
+            <tr><td>काली भाटी (Kali Bhati)</td><td>2.17 km</td><td>पूर्व (East)</td></tr>
+            <tr><td>रवांजना डूंगर (Rawanjna Doongar)</td><td>2.24 km</td><td>दक्षिण-पूर्व (South-East)</td></tr>
+            <tr><td>रवांजना चौड़ (Rawanjna Chaur)</td><td>2.69 km</td><td>पश्चिम (West)</td></tr>
+            <tr><td>जुवार (Juwar)</td><td>3.29 km</td><td>उत्तर-पश्चिम (North-West)</td></tr>
+            <tr><td>सांकली (Sankli)</td><td>3.44 km</td><td>दक्षिण-पश्चिम (South-West)</td></tr>
+            <tr><td>निमाली कलां (Nimli Kalan)</td><td>3.67 km</td><td>उत्तर (North)</td></tr>
+            <tr><td>लक्ष्मीपुरा (Laxmipura)</td><td>3.74 km</td><td>दक्षिण (South)</td></tr>
+            <tr><td>पीपलवाड़ा (Peepalwara)</td><td>4.70 km</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal / Lightbox -->
+  <div class="modal" id="imageModal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-info">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        <h3 id="modalTitle" style="font-size: 1.1rem; color: var(--primary);"></h3>
+      </div>
+      <img id="modalImg" src="" alt="Jaitpura">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Jaitpura Village Portal | All Rights Reserved</p>
+    <div class="branding-box" id="adminSecretTrigger" title="डबल क्लिक करके अपलोड टूल खोलें/छुपाएं">
+      Designed and Hosted by <strong>Naresh Kumar Akhand</strong>
+    </div>
+  </footer>
+
+  <script>
+    // Storage Key
+    const STORAGE_KEY = 'jaitpura_gallery_photos';
+    let currentFilter = 'all';
+    let isAdminVisible = false;
+
+    // Load photos from LocalStorage
+    function getPhotos() {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    }
+
+    // Save photos
+    function savePhotos(photos) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(photos));
+    }
+
+    // Render Gallery
+    function renderGallery() {
+      const container = document.getElementById('galleryContainer');
+      const photos = getPhotos();
+      
+      const filtered = currentFilter === 'all' 
+        ? photos 
+        : photos.filter(p => p.category === currentFilter);
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 2.5rem 1rem; color: var(--text-muted); background: #f8fafc; border-radius: 8px; border: 1px dashed var(--border);">
+            <p style="font-weight: 500;">इस श्रेणी में अभी कोई फोटो उपलब्ध नहीं है।</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map((photo, index) => {
+        const catLabels = {
+          railway: 'निकटतम रेलवे स्टेशन (RWJ)',
+          temple: 'मंदिर व धार्मिक स्थल',
+          village: 'गांव का दृश्य',
+          school: 'शिक्षा',
+          agriculture: 'खेत व प्रकृति'
+        };
+
+        return `
+          <div class="gallery-card" onclick="openModal('${photo.src}', '${photo.title}')">
+            <button class="delete-btn" title="डिलीट करें" onclick="event.stopPropagation(); deletePhoto(${photo.id})">&times;</button>
+            <img src="${photo.src}" alt="${photo.title}">
+            <div class="gallery-meta">
+              <span class="gallery-cat">${catLabels[photo.category] || photo.category}</span>
+              <div class="gallery-title">${photo.title}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Refresh delete button visibility based on admin mode
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.style.display = isAdminVisible ? 'flex' : 'none';
+      });
+    }
+
+    // Toggle Secret Admin Tool
+    function toggleAdminTool(state) {
+      isAdminVisible = state;
+      const card = document.getElementById('adminUploadCard');
+      card.style.display = isAdminVisible ? 'block' : 'none';
+      
+      // Toggle delete buttons
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.style.display = isAdminVisible ? 'flex' : 'none';
+      });
+
+      if (isAdminVisible) {
+        card.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Shortcut: Double click footer branding or press Ctrl+Shift+U
+    document.getElementById('adminSecretTrigger').addEventListener('dblclick', () => {
+      toggleAdminTool(!isAdminVisible);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'U' || e.key === 'u')) {
+        toggleAdminTool(!isAdminVisible);
+      }
+    });
+
+    // Handle Upload
+    function handleUpload() {
+      const fileInput = document.getElementById('photoInput');
+      const titleInput = document.getElementById('photoTitle');
+      const catSelect = document.getElementById('photoCategory');
+
+      if (!fileInput.files || !fileInput.files[0]) {
+        alert('कृपया कोई फोटो चुनें!');
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const title = titleInput.value.trim() || 'जैतपुरा दृश्य';
+      const category = catSelect.value;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        // Compress image via Canvas to save space
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const maxDim = 1200;
+          let w = img.width;
+          let h = img.height;
+
+          if (w > maxDim || h > maxDim) {
+            if (w > h) {
+              h = Math.round((h * maxDim) / w);
+              w = maxDim;
+            } else {
+              w = Math.round((w * maxDim) / h);
+              h = maxDim;
+            }
+          }
+
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+
+          const compressedSrc = canvas.toDataURL('image/jpeg', 0.82);
+
+          const photos = getPhotos();
+          photos.unshift({
+            id: Date.now(),
+            src: compressedSrc,
+            title: title,
+            category: category
+          });
+
+          savePhotos(photos);
+          renderGallery();
+
+          // Reset Form & Hide Upload Panel after uploading
+          fileInput.value = '';
+          titleInput.value = '';
+          toggleAdminTool(false);
+          alert('फोटो सफलतापूर्वक अपलोड हो गई है!');
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Delete Photo
+    function deletePhoto(id) {
+      if (!confirm('क्या आप इस फोटो को हटाना चाहते हैं?')) return;
+      let photos = getPhotos();
+      photos = photos.filter(p => p.id !== id);
+      savePhotos(photos);
+      renderGallery();
+    }
+
+    // Filter Function
+    function filterGallery(cat, btn) {
+      currentFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGallery();
+    }
+
+    // Modal
+    function openModal(src, title) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('imageModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('active');
+    }
+
+    // Initial Render
+    renderGallery();
+  </script>
+</body>
+</html>
