@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Jaitpura Village Portal | Sawai Madhopur, Rajasthan</title>
-  <meta name="description" content="Official community portal for Jaitpura village in Sawai Madhopur district, Rajasthan. Census 2011 demographics, geography, Rawanjna Doongar Gram Panchayat details, nearby railway station RWJ, and photo gallery.">
-  <meta name="keywords" content="Jaitpura, Jaitpura village, Jaitpura Sawai Madhopur, Rawanjna Doongar, RWJ, 322001, Khandar, Chauth Ka Barwara, Naresh Kumar Akhand">
+  <meta name="description" content="Official community portal for Jaitpura village in Sawai Madhopur district, Rajasthan. Census 2011 demographics, geography, Rawanjna Doongar Gram Panchayat details, nearby railway station RWJ, Samudayik Bhavan, and photo gallery.">
+  <meta name="keywords" content="Jaitpura, Jaitpura village, Jaitpura Sawai Madhopur, Rawanjna Doongar, RWJ, Samudayik Bhavan, 322001, Khandar, Chauth Ka Barwara, Naresh Kumar Akhand">
   <meta name="author" content="Naresh Kumar Akhand">
   <meta name="robots" content="index, follow">
 
@@ -326,12 +326,10 @@
 </head>
 <body>
 
-  <!-- Branding Strip -->
   <div class="top-strip">
     Designed and Hosted by <strong>Naresh Kumar Akhand</strong>
   </div>
 
-  <!-- Header -->
   <header>
     <h1>Jaitpura Village Portal</h1>
     <p>ग्राम जैतपुरा | तहसील व जिला: सवाई माधोपुर (राजस्थान)</p>
@@ -345,7 +343,6 @@
 
   <main class="container">
 
-    <!-- About -->
     <section class="card">
       <h2>गांव का संक्षिप्त परिचय</h2>
       <p>
@@ -353,7 +350,6 @@
       </p>
     </section>
 
-    <!-- Stats -->
     <div class="stat-cards">
       <div class="stat-box">
         <div class="num">740</div>
@@ -377,7 +373,6 @@
       </div>
     </div>
 
-    <!-- Administrative & Connectivity -->
     <div class="grid-2">
       <section class="card">
         <h2>प्रशासनिक विवरण (Administration)</h2>
@@ -405,21 +400,32 @@
       </section>
     </div>
 
-    <!-- Live Photo Gallery (Directly Linked to GitHub Repository Photos) -->
+    <!-- Live Photo Gallery -->
     <section class="card">
       <h2>जैतपुरा फोटो गैलरी (Photo Gallery)</h2>
 
+      <!-- Categories Filter with Samudayik Bhavan -->
       <div class="filter-bar">
         <button class="filter-btn active" onclick="filterGallery('all', this)">सभी (All)</button>
+        <button class="filter-btn" onclick="filterGallery('samudayik', this)">सामुदायिक भवन</button>
         <button class="filter-btn" onclick="filterGallery('railway', this)">निकटतम रेलवे स्टेशन (RWJ)</button>
         <button class="filter-btn" onclick="filterGallery('temple', this)">मंदिर व धार्मिक स्थल</button>
         <button class="filter-btn" onclick="filterGallery('village', this)">गांव का दृश्य</button>
         <button class="filter-btn" onclick="filterGallery('school', this)">शिक्षा</button>
         <button class="filter-btn" onclick="filterGallery('agriculture', this)">खेत व प्रकृति</button>
-        <button class="filter-btn" onclick="filterGallery('community', this)">सामुदायिक भवन</button>
       </div>
 
       <div class="gallery-grid" id="galleryContainer">
+
+        <!-- Samudayik Bhavan Card -->
+        <div class="gallery-card" data-category="samudayik" onclick="openModal('samudayik bhavan.jpg', 'सामुदायिक भवन जैतपुरा')">
+          <img src="samudayik%20bhavan.jpg" alt="सामुदायिक भवन" onerror="this.src='samudayik bhavan.jpg'; this.onerror=null;">
+          <div class="gallery-meta">
+            <span class="gallery-cat">सार्वजनिक भवन</span>
+            <div class="gallery-title">सामुदायिक भवन जैतपुरा</div>
+          </div>
+        </div>
+
         <!-- Railway Station -->
         <div class="gallery-card" data-category="railway" onclick="openModal('railway.jpg', 'निकटतम रेलवे स्टेशन (RWJ)')">
           <img src="railway.jpg" alt="रवांजना डूंगर रेलवे स्टेशन" onerror="this.src='https://placehold.co/600x400?text=Railway+Station'">
@@ -465,18 +471,10 @@
           </div>
         </div>
 
-        <!-- Community Building -->
-        <div class="gallery-card" data-category="community" onclick="openModal('bhavan.jpg', 'सामुदायिक भवन')">
-          <img src="bhavan.jpg" alt="सामुदायिक भवन" onerror="this.src='https://placehold.co/600x400?text=Samudayik+Bhavan'">
-          <div class="gallery-meta">
-            <span class="gallery-cat">सार्वजनिक स्थल</span>
-            <div class="gallery-title">सामुदायिक भवन</div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Google Map Embed -->
+    <!-- Map -->
     <section class="card">
       <h2>गूगल मैप्स लोकेशन (Google Map)</h2>
       <div class="map-wrapper">
@@ -513,7 +511,7 @@
       </div>
     </section>
 
-    <!-- Nearby Villages Table -->
+    <!-- Nearby Villages -->
     <section class="card">
       <h2>आस-पास के गांव (Nearby Villages)</h2>
       <div class="table-container">
@@ -543,7 +541,6 @@
 
   </main>
 
-  <!-- Modal / Lightbox -->
   <div class="modal" id="imageModal" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
       <div class="modal-info">
@@ -554,7 +551,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>© 2026 Jaitpura Village Portal | All Rights Reserved</p>
     <div class="branding-box">
@@ -588,5 +584,4 @@
     }
   </script>
 </body>
-                                                          </html>
-                                                          
+</html>
